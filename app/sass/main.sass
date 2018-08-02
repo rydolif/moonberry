@@ -89,6 +89,7 @@
 			&:hover
 				text-decoration: none
 				outline: none
+
 		.call
 			font-size: 13px
 			font-weight: 700
@@ -251,18 +252,39 @@
 .social-button
 	display: none
 
-.header
-	&-active
-		.wrap-social
-			display: flex
-			flex-direction: row
-			.nav a
+.wrap-social
+	text-align: center
+	display: flex
+	flex-direction: row
+	transition: all .3s
+
+	div
+		display: flex
+		flex-direction: column
+		transition: all .3s
+
+.header-active
+	.wrap-social
+		display: flex
+		flex-direction: row
+		align-items: center
+
+		div
+			margin-right: 15px
+
+		.call
+			padding: 0 25px
+			height: 43px
+			line-height: 40px
+			transition: all .3s
+
+		.nav
+			a
 				font-size: 18px
 				flex-direction: row
-			.phone__tel
+
+		.phone__tel
 				font-size: 20px
-			.call
-				padding: 8px
 
 .swiper-content
 	padding-top: 130px
@@ -347,6 +369,10 @@
 			position: absolute
 			left: 80%	
 			top: 13%
+
+.wrap-bottle-logo
+	max-width: 280px
+	height: auto
 
 .drinks
 	background-position: center
