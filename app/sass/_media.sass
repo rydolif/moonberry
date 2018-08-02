@@ -11,29 +11,34 @@
 			a
 				font-size: 14px
 			.phone__tel
-				font-size: 20px	
+				font-size: 20px
 		&__content
 			padding-top: 160px
-			padding-bottom: 140px
 			h1
 				font-size: 40px
 			.bix-text
 				font-size: 24px
 			p
-				font-size: 18px	
+				font-size: 18px
 
 	.drinks
-		padding-top: 270px
-		.content-left 
-			h2			
+		padding-top: 50px
+		padding-bottom: 50px
+
+		h2
+			span
+				font-size: 40px
+
+		.content-left
+			h2
 				font-size: 40px
 				margin-bottom: 20px
 			ul
 				li
-					font-size: 18px	
+					font-size: 18px
 					margin-bottom: 10px
 			p
-				font-size: 18px		
+				font-size: 18px
 	
 	.declaration 
 		padding-bottom: 100px
@@ -114,7 +119,16 @@
 		&-active
 			padding-top: 5px
 			padding-bottom: 5px
-
+			img
+				height: 70px	
+				width: 70px	
+			.nav
+				a
+					font-size: 12px		
+				li
+					margin-right: 10px	
+			.social
+					width: 35%			
 
 @media only screen and (max-width : 992px)
 	.header
@@ -184,9 +198,20 @@
 			z-index: 1001
 			ul
 				display: block
+		.social
+			width: 70%	
+			display: none
+		.wrap-social
+			display: block			
 
 	.hamburger
 		display: block
+		&-menu
+			.social
+				flex-direction: column
+				align-items: center
+				width: 100%
+				align-items: center
 
 	.nav
 		li
@@ -204,7 +229,7 @@
 					&:before
 						left: 5px
 
-		.content-right 
+		.content-right
 			height: 155px
 			width: 155px
 			&:after
@@ -214,8 +239,8 @@
 				top: 5%
 					
 			p
-				font-size: 12px	
-				margin-top: 50px	
+				font-size: 12px
+				margin-top: 50px
 
 	.declaration
 		.button-content
@@ -242,27 +267,35 @@
 
 	.slider
 		padding-bottom: 0
+
 		h2
 			font-size: 35px
 			margin-top: 90%
+
 		.button-pagination
 			margin-left: 8%
+
 		.bottle__img
 			width: 100%
 			height: 100%
+
 			img
-				width: 49%
+				width: 70%
 				height: 60%
+
 		.wrap-bottle-logo
 			height: 20%
 			width: 70%
-		.bottle__slide-block 
+
+		.bottle__slide-block
 			span
 				font-size: 20px
+
 			h5
 				font-size: 30px
 				b
 					font-size: 18px
+
 			p
 				font-size: 16px
 
@@ -379,8 +412,10 @@
 					margin: 0
 
 	.drinks
-		padding-top: 230px
+		padding-top: 50px
 		background-size: 135% 100%
+
+
 		.content-left 
 			padding-left: 0
 			h2
@@ -410,19 +445,25 @@
 
 	.slider
 		background-size: 160% 78%
+
 		h2
 			margin-top: 0
 			text-align: center
 			margin-left: 0
+
 			br
 				display: none
+
 		.button-pagination
 			margin-bottom: 40px
 			margin-left: 0
 			justify-content: center
+
 		.bottle__img
 			img
 				width: 50%
+				display: block
+				margin: 0 auto
 
 		.wrap-bottle-logo
 			height: auto

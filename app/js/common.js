@@ -389,7 +389,7 @@ $('.tabs ul a').click(function(event){
         $(".hamburger").removeClass("hamburger-active");
         $(".nav").removeClass("nav-active");
         $('html, body').animate({
-          scrollTop: target.offset().top - 80
+          scrollTop: target.offset().top - 150
         }, 1000, function() {
         });
       }

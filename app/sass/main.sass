@@ -27,18 +27,32 @@
 		padding: 5px 0
 		img
 			transition: all 0.3s ease
-			width: 80px
-			height: 80px
-
+			width: 70px
+			height: 70px
 
 		.nav .social .phone__tel
-			font-size: 16px	
+			font-size: 16px
 
 		.nav .social .call
 			font-size: 12px
 			padding: 10px
-	
-				
+
+		.nav a
+			font-size: 18px
+			
+		.social
+			display: flex
+			flex-direction: row
+			flex-wrap: wrap
+			width: 32%
+			text-align: center
+			justify-content: center
+			.phone__tel
+				margin-right: 10px
+				font-size: 20px
+			.call
+				padding: 8px
+
 	&__container
 		position: relative
 		display: flex
@@ -47,25 +61,23 @@
 		justify-content: space-between
 
 	.social
-		a
-			position: relative
-			text-decoration: none
-
-			i
-				color: #5d9cc9
-				height: 16px
-				width: 16px
-				margin-right: 15px
-				text-decoration: none
-				&:hover
-					color: #f77c84
-					text-decoration: none
-
-
-
-	.social
 		display: flex
 		flex-direction: column
+
+		a
+		position: relative
+		text-decoration: none
+
+		i
+			color: #5d9cc9
+			height: 16px
+			width: 16px
+			margin-right: 15px
+			text-decoration: none
+			&:hover
+				color: #f77c84
+				text-decoration: none
+
 		.phone__tel
 			font-size: 24px
 			color: #151617
@@ -85,7 +97,88 @@
 			padding: 12px
 			text-align: center
 			color: #13a28c
+	
+	&__content
+		background-image: url("../img/main-bg.png")
+		background-position: 0 -50px
+		background-repeat: no-repeat
+		background-size: cover
+		padding-top: 200px
+		padding-bottom: 50px
+		position: relative
+		h1
+			font-weight: 300
+			font-size: 60px
+			width: 60%
+			position: relative
+			z-index: 1
+			strong
+				text-transform: uppercase
+				font-weight: 400
+				position: relative
+				&:before
+					position: absolute
+					content: ''
+					bottom: 8px
+					left: 0
+					right: 0
+					height: 20px
+					background-color: #3feac0
+					z-index: -1
 
+		.bix-text
+			font-size: 30px
+			font-weight: 400
+			width: 64%
+			color: #151617
+
+		p
+			color: #7b8a93
+			font-size: 24px
+			font-weight: 300
+			width: 62%
+			line-height: 32px
+			margin-bottom: 55px
+			&:last-child
+				margin-bottom: 0
+
+		&.hamburger-active
+			z-index: 1000000
+
+		.studio
+			margin-bottom: 30px
+			font-size: 20px
+			font-weight: 300
+			margin-left: 80px
+			position: relative
+		
+			text-transform: uppercase
+			&:before
+				content: ''
+				height: 2px
+				width: 50px
+				background-color: #f77c84	
+				position: absolute
+				left: -75px
+				top: 14px
+
+		img
+			position: absolute
+			&:nth-child(1)
+				top: 4%
+				right: 52%
+			&:nth-child(2)
+				top: 69%
+				right: 90%
+			&:nth-child(3)
+				left: 90%
+				top: 75%
+		
+		.swiper-pagination
+			width: auto
+			bottom: 130px
+			left: 50%	
+			transform: translateX(-580px)
 
 .nav
 	display: flex
@@ -98,16 +191,15 @@
 		justify-content: space-between
 
 	li
-		margin-right: 20px	
+		margin-right: 40px
 		&:last-child
 			margin-right: 0
 	
 	a
 		position: relative
-		font-size: 14px
+		font-size: 18px
 		color: #000
 		z-index: 1
-		text-transform: uppercase
 		&::before
 			content: ''
 			width: 0
@@ -136,7 +228,6 @@
 	.social
 		display: none
 
-
 .social
 	display: flex
 	flex-direction: column
@@ -156,93 +247,27 @@
 		padding: 12px
 		text-align: center
 		color: #13a28c
-
+	
 .social-button
 	display: none
 
-
-.header__content
-	background: url("../img/main-bg.png") no-repeat center top / cover
-	padding-top: 260px
-	position: relative
-	padding-bottom: 200px
-	h1
-		font-weight: 300
-		font-size: 60px
-		width: 60%
-		position: relative
-		z-index: 1
-		strong
-			text-transform: uppercase
-			font-weight: 400
-			position: relative
-			&:before
-				position: absolute
-				content: ''
-				bottom: 8px
-				left: 0
-				right: 0
-				height: 20px
-				background-color: #3feac0
-				z-index: -1
-	.bix-text
-		font-size: 30px
-		font-weight: 500
-		width: 64%
-		color: #151617
-	p
-		color: #7b8a93
-		font-size: 24px	
-		font-weight: 300
-		width: 62%
-		line-height: 32px
-
-					
-	&.hamburger-active
-		z-index: 1000000
-
-	.studio
-		margin-bottom: 30px
-		font-size: 20px
-		font-weight: 300
-		margin-left: 80px
-		position: relative
-	
-		text-transform: uppercase
-		&:before
-			content: ''
-			height: 2px
-			width: 50px
-			background-color: #f77c84	
-			position: absolute
-			left: -75px
-			top: 14px
-
-
-	img
-		position: absolute
-		&:nth-child(1)
-			top: 4%
-			right: 52%
-		&:nth-child(2)
-			top: 69%
-			right: 90%
-		&:nth-child(3)
-			left: 90%
-			top: 75%
-	
-	.swiper-pagination
-		width: auto
-		bottom: 130px
-		left: 50%	
-		transform: translateX(-580px)
+.header
+	&-active
+		.wrap-social
+			display: flex
+			flex-direction: row
+			.nav a
+				font-size: 18px
+				flex-direction: row
+			.phone__tel
+				font-size: 20px
+			.call
+				padding: 8px
 
 .swiper-content
-	
 	padding-top: 130px
 	padding-bottom: 250px
-	
-	
+
 	span
 		margin-right: 10px
 
@@ -256,13 +281,12 @@
 	&-active
 		background: #5c9bc9
 
-.about	
-	position: relative	
+.about
+	position: relative
 	padding-top: 115px
 	padding-bottom: 120px	
 	.left-procedur
 		position: relative
-		// background: url("../img/bg-shadow.jpg") no-repeat center top / cover
 		z-index: 1
 		img
 
@@ -325,8 +349,17 @@
 			top: 13%
 
 .drinks
-	background: url("../img/second-bg.png") no-repeat center top / cover
-	padding-top: 450px
+	background-position: center
+	background: url("../img/second-bg.png")
+	background-repeat: no-repeat
+	background-size: cover
+	padding-top: 300px
+	padding-bottom: 200px
+
+	h2
+		span
+			font-size: 60px
+			text-transform: uppercase
 
 	.content
 		&-wrap
@@ -399,8 +432,13 @@
 .declaration
 	background: linear-gradient(to bottom, #f9fdfd, #ffffff)
 	
+	h2
+		font-size: 72px
+		span
+			font-size: 48px
+			text-transform: uppercase
+
 	.button-content
-		padding-top: 140px
 		padding-bottom: 90px
 		display: flex
 		flex-direction: row
@@ -418,7 +456,7 @@
 			z-index: 0
 		a
 			background-color: #fff
-			padding: 20px
+			padding: 10px 20px
 			margin-right: 20px
 			border-radius: 50px
 			font-size: 12px
@@ -428,7 +466,7 @@
 			img
 				padding-right: 10px
 		.drink-icon-two
-			padding: 30px
+			padding: 10px 30px 
 	.last-block
 		padding-top: 50px
 		padding-bottom: 50px
@@ -550,13 +588,13 @@
 .format
 	background: url("../img/form-bottle-bg.png") no-repeat center top 
 	.aloe
-		
 		display: block
 		margin: -50px auto 0
-	// padding-top: 60px
+
 	h2
 		text-align: center
 		margin-bottom: 95px
+
 	.format-table
 		display: flex
 		flex-direction: row
@@ -594,12 +632,12 @@
 				padding-bottom: 40px
 				p
 					font-size: 20px
-					margin-bottom: 60px	
-					font-weight: 500	
+					margin-bottom: 60px
+					font-weight: 500
 				.wrapper
 					display: flex
 					flex-direction: row
-					justify-content: center	
+					justify-content: center
 					p
 						font-size: 22px
 						color: #7b8a93
@@ -609,7 +647,7 @@
 							color: #151617
 							font-weight: 500
 
-			.last-text						
+			.last-text
 				width: 97%
 				font-size: 22px
 				color: #7b8a93
@@ -620,7 +658,7 @@
 
 .where-buy
 	padding-top: 100px
-	padding-bottom: 120px	
+	padding-bottom: 120px
 	h2
 		text-align: center
 	h4
@@ -634,7 +672,7 @@
 		flex-wrap: wrap
 
 		.magazine-card
-			border: 1px solid #dfebec	
+			border: 1px solid #dfebec
 			padding: 35px 10px
 			width: 17.9%
 			text-align: center
