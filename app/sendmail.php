@@ -1,30 +1,49 @@
 <?php
-	$SITE_TITLE = 'ArtStudio';
+	$SITE_TITLE = 'Moonberry';
 	$SITE_DESCR = '';
 
 	if ( isset($_POST) ) {
 		$name = htmlspecialchars(trim($_POST['name']));
-		// $email = htmlspecialchars(trim($_POST['email']));
 		$phone = htmlspecialchars(trim($_POST['phone']));
+		$email = htmlspecialchars(trim($_POST['email']));
+		$selector = htmlspecialchars(trim($_POST['selector']));
+		$сompany = htmlspecialchars(trim($_POST['сompany']));
+		$organisetion = htmlspecialchars(trim($_POST['organisetion']));
+		$position = htmlspecialchars(trim($_POST['position']));
 		$subject = $_POST['subject'] ? htmlspecialchars(trim($_POST['subject'])) : '';
-		$comment = isset($_POST['comment']) ? htmlspecialchars(trim($_POST['comment'])) : '';
 		$question = isset($_POST['question']) ? htmlspecialchars(trim($_POST['question'])) : '';
-		$to = 'Elena357910@yandex.com';
+		$to = 'info@moonberry.net.ru';
 
 		$headers = "From: $SITE_TITLE \r\n";
-		// $headers .= "Reply-To: ". $email . "\r\n";
+		$headers .= "Reply-To: ". $email . "\r\n";
 		$headers .= "Content-Type: text/html; charset=utf-8\r\n";
 
 		$data = '<h1>'.$subject."</h1>";
 		$data .= 'Имя: '.$name."<br>";
-		// $data .= 'Email: '.$email."<br>";
-		$data .= 'Телефон: '.$phone."<br>";
+		$data .= 'Email: '.$email."<br>";
 
-		if ( $comment != '' ) {
-			$data .= 'Комментарий: ' . $comment;
+		if ( $phone != '' ) {
+			$data .= 'Телефон: ' . $phone . "<br>";
 		}
+
+		if ( $position != '' ) {
+			$data .= 'Ваша должность: ' . $position . "<br>";
+		}
+
+		if ( $organisetion != '' ) {
+			$data .= 'ИНН организации: ' . $organisetion . "<br>";
+		}
+		
+		if ( $сompany != '' ) {
+			$data .= 'Название организации: ' . $сompany . "<br>";
+		}
+
+		if ( $selector != '' ) {
+			$data .= 'Вид деятельности: ' . $selector . "<br>";
+		}
+
 		if ( $question != '' ) {
-			$data .= 'Вопрос: ' . $question;
+			$data .= 'Вопрос: ' . $question . "<br>";
 		}
 
 		$message = "<div style='background:#ccc;border-radius:10px;padding:20px;'>

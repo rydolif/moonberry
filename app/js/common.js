@@ -158,35 +158,11 @@ $('.hamburger').click(function() {
 	   return this.optional(element) || phone_number.match(/\+[0-9]{1}\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}/);
 	}, "Введите Ваш телефон");
 
-  $(".order-form").validate({
-    messages: {
-      name: "Введите ваше Имя",
-      phone: "Введите ваш телефон",
-    },
-    rules: {
-      "phone": {
-        required: true,
-        phoneno: true
-      }
-    },
-    submitHandler: function(form) {
-      var t = {
-        name: jQuery(".order-form").find("input[name=name]").val(),
-        phone: jQuery(".order-form").find("input[name=phone]").val(),
-        number: jQuery(".order-form").find("input[name=number]").val(),
-        product: jQuery(".order-form").find("input[name=product]").val(),
-        subject: jQuery(".order-form").find("input[name=subject]").val()
-      };
-      ajaxSend('.order-form', t);
-    }
-  });
-
-
-
   $(".order-two-form").validate({
     messages: {
-      name: "Название организации",
-      phone: "Введите ваш телефон",
+      name: "Введите ФИО",
+      phone: "Введите Телефон",
+      email: "Введите ваш email",
     },
     rules: {
       "phone": {
@@ -198,102 +174,22 @@ $('.hamburger').click(function() {
       var t = {
         name: jQuery(".order-two-form").find("input[name=name]").val(),
         phone: jQuery(".order-two-form").find("input[name=phone]").val(),
+        email: jQuery(".order-two-form").find("input[name=email]").val(),
+        selector: jQuery(".order-two-form").find("select[name=selector]").val(),
+        сompany: jQuery(".order-two-form").find("input[name=сompany]").val(),
+        organisetion: jQuery(".order-two-form").find("input[name=organisetion]").val(),
+        position: jQuery(".order-two-form").find("input[name=position]").val(),
+        question: jQuery(".order-two-form").find("textarea[name=question]").val(),
         subject: jQuery(".order-two-form").find("input[name=subject]").val()
       };
       ajaxSend('.order-two-form', t);
     }
   });
 
-
-  $(".order-four-form").validate({
-    messages: {
-      name: "Введите ваше Имя",
-      phone: "Введите ваш телефон",
-    },
-    rules: {
-      "phone": {
-        required: true,
-        phoneno: true
-      }
-    },
-    submitHandler: function(form) {
-      var t = {
-        name: jQuery(".order-four-form").find("input[name=name]").val(),
-        phone: jQuery(".order-four-form").find("input[name=phone]").val(),
-        subject: jQuery(".order-four-form").find("input[name=subject]").val()
-      };
-      ajaxSend('.order-four-form', t);
-    }
-  });
-
-  
-
-  $(".question-form").validate({
-    messages: {
-      name: "Введите ваше Имя",
-      phone: "Введите ваш телефон",
-    },
-    rules: {
-      "phone": {
-        required: true,
-        phoneno: true
-      }
-    },
-    submitHandler: function(form) {
-      var t = {
-        phone: jQuery(".question-form").find("input[name=phone]").val()
-        
-      };
-      ajaxSend('.question-form', t);
-    }
-  });
-
-   $(".question-two-form").validate({
-    messages: {
-      name: "Введите ваше Имя",
-      phone: "Введите ваш телефон",
-    },
-    rules: {
-      "phone": {
-        required: true,
-        phoneno: true
-      }
-    },
-    submitHandler: function(form) {
-      var t = {
-        phone: jQuery(".question-two-form").find("input[name=phone]").val()
-        
-      };
-      ajaxSend('.question-two-form', t);
-    }
-  });
-
-   $(".question-three-form").validate({
-    messages: {
-      name: "Введите ваше Имя",
-      phone: "Введите ваш телефон",
-    },
-    rules: {
-      "phone": {
-        required: true,
-        phoneno: true
-      }
-    },
-    submitHandler: function(form) {
-      var t = {
-        phone: jQuery(".question-three-form").find("input[name=phone]").val()
-        
-      };
-      ajaxSend('.question-three-form', t);
-    }
-  });
-
-
-
   function ajaxSend(formName, data) {
     jQuery.ajax({
       type: "POST",
-      url: "sendmail.php",
+      url: "wp-content/themes/moonberry/sendmail.php",
       data: data,
       success: function() {
         $(".modal").popup("hide");
@@ -389,7 +285,7 @@ $('.tabs ul a').click(function(event){
         $(".hamburger").removeClass("hamburger-active");
         $(".nav").removeClass("nav-active");
         $('html, body').animate({
-          scrollTop: target.offset().top - 150
+          scrollTop: target.offset().top - 100
         }, 1000, function() {
         });
       }
