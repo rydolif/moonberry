@@ -152,11 +152,29 @@ $('.hamburger').click(function() {
   $('.modal').popup({transition: 'all 0.3s'});
 
 //------------------------------------form-------------------------------------------
+
+  $('input[type=tel]').focus(function(){
+      if( $(this).val() == '' ) {
+        $(this).val('+7 (');
+      }
+    });
+
+    $('input[type=tel]').focusout(function(){
+      if( $(this).val() == '+7 (' ) {
+        $(this).val('');
+      }
+  });
+    
 	$('input[type="tel"]').mask('+0 (000) 000-00-00');
 
 	jQuery.validator.addMethod("phoneno", function(phone_number, element) {
 	   return this.optional(element) || phone_number.match(/\+[0-9]{1}\s\([0-9]{3}\)\s[0-9]{3}-[0-9]{2}-[0-9]{2}/);
 	}, "Введите Ваш телефон");
+
+  jQuery.validator.addMethod("emailno", function(email_number, element) {
+     return this.optional(element) || email_number.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/);
+  }, "Неправильный формат E-mail");
+
 
   $(".order-two-form").validate({
     messages: {
@@ -168,8 +186,13 @@ $('.hamburger').click(function() {
       "phone": {
         required: true,
         phoneno: true
+      },
+      "email": {
+        required: true,
+        emailno: true
       }
     },
+
     submitHandler: function(form) {
       var t = {
         name: jQuery(".order-two-form").find("input[name=name]").val(),
